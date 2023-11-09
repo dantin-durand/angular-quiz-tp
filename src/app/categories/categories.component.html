@@ -1,0 +1,19 @@
+<div class="search-bar">
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Rechercher"
+    (keyup)="searchCategory()"
+    class="search-bar__input"
+  />
+  <button (click)="resetFilter()" class="btn">Réinitialiser</button>
+</div>
+
+<div class="category-card-container">
+  <app-category-btn
+    *ngFor="let category of categories"
+    (click)="navigateToQuiz(category)"
+    [btnTitle]="category.categoryLabel"
+  >
+  </app-category-btn>
+</div>
